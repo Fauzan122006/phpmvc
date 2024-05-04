@@ -23,28 +23,30 @@ class DaftarSiswa_model
     //     ],
     // ];
 
-    private $dbh; // data source handler
-    private $stmt;
+    private $table = 'siswa';
+    private $db;
 
     public function __construct()
     {
-        // data source name
-        $dsn = 'mysql:host=localhost;dbname=rpl3_web';
-
-        try {
-            $this->dbh = new PDO($dsn, 'root', '');
-        } catch (PDOException $e) {
-            die($e->getMessage());
-        }
+        $this->db = new Database;
     }
+
+
 
 
     public function getAllSiswa()
     {
-        $this->stmt = $this->dbh->prepare('SELECT * FROM siswa');
-        $this->stmt->execute();
+        $this->db->query('SELECT * FROM ' . $this->table);
 
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $this->db->resultSet();
 
+    }
+
+    public function getSiswaById($id)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
+
+        return $this->db->single();
     }
 }

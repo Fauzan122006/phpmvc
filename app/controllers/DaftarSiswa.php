@@ -10,4 +10,13 @@ class DaftarSiswa extends Controller
         $this->view('daftarsiswa/index', $data);
         $this->view('templates/footer');
     }
+
+    public function detail($id)
+    {
+        $data['judul'] = "Detail siswa";
+        $data['siswa'] = $this->model('DaftarSiswa_model')->getSiswaById($id);
+        $this->view('templates/header', $data);
+        $this->view('daftarsiswa/detail', $data);
+        $this->view('templates/footer');
+    }
 }

@@ -49,4 +49,19 @@ class DaftarSiswa_model
 
         return $this->db->single();
     }
+
+    public function tambahDataSiswa($data)
+    {
+        $query = "INSERT INTO siswa VALUES('', :nama, :telepon, :email, :jurusan)";
+
+        $this->db->query($query);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('telepon', $data['telepon']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('jurusan', $data['jurusan']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

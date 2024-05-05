@@ -19,4 +19,11 @@ class DaftarSiswa extends Controller
         $this->view('daftarsiswa/detail', $data);
         $this->view('templates/footer');
     }
+    public function tambah()
+    {
+        if ($this->model('DaftarSiswa_model')->tambahDataSiswa($_POST) > 0) {
+            header('Location: ' . BASEURL . '/daftarsiswa');
+            exit;
+        }
+    }
 }

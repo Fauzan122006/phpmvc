@@ -31,4 +31,16 @@ class DaftarSiswa extends Controller
             exit;
         }
     }
+    public function hapus($id)
+    {
+        if ($this->model('DaftarSiswa_model')->hapusDataSiswa($id) > 0) {
+            Flasher::setFlash('berhasil', 'dihapus', 'success');
+            header('Location: ' . BASEURL . '/daftarsiswa');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'dihapus', 'danger');
+            header('Location: ' . BASEURL . '/daftarsiswa');
+            exit;
+        }
+    }
 }

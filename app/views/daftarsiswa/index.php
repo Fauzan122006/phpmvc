@@ -1,5 +1,7 @@
 <div class="container -mt3">
     <h4>Daftar Siswa</h4>
+
+    <?php Flasher::flash() ?>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah siswa
     </button>

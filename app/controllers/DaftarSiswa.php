@@ -22,6 +22,11 @@ class DaftarSiswa extends Controller
     public function tambah()
     {
         if ($this->model('DaftarSiswa_model')->tambahDataSiswa($_POST) > 0) {
+            Flasher::setFlash('berhasil', 'ditambahkan', 'success');
+            header('Location: ' . BASEURL . '/daftarsiswa');
+            exit;
+        } else {
+            Flasher::setFlash('gagal', 'ditambahkan', 'danger');
             header('Location: ' . BASEURL . '/daftarsiswa');
             exit;
         }

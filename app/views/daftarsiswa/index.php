@@ -17,13 +17,15 @@
         <tbody>
             <?php foreach ($data["DaftarSiswa"] as $s): ?>
                 <tr>
-                    <th scope="row">1</th>
+                    <?php ?>
+                    <th scope="row"><?= $s["id"]; ?></th>
 
                     <td><?= $s["nama"] ?></td>
                     <td><?= $s["telepon"] ?></td>
                     <td><?= $s["email"] ?></td>
                     <td><a href="<?= BASEURL; ?>/daftarsiswa/detail/<?= $s['id']; ?>"
                             class="badge text-bg-info text-white">detail</a></td>
+                    <?php ?>
 
                 </tr>
             <?php endforeach; ?>

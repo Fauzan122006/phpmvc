@@ -2,7 +2,7 @@
     <h4>Daftar Siswa</h4>
 
     <?php Flasher::flash() ?>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+    <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah siswa
     </button>
 
@@ -23,6 +23,9 @@
                     <td><?= $s["email"] ?></td>
                     <td><a href="<?= BASEURL; ?>/daftarsiswa/detail/<?= $s['id']; ?>"
                             class="badge text-bg-info text-white">detail</a></td>
+                    <td><a href="<?= BASEURL; ?>/daftarsiswa/ubah/<?= $s['id']; ?>"
+                            class="badge text-bg-success text-white tampilModalUbah" data-bs-toggle="modal"
+                            data-bs-target="#formModal" data-id="<?= $s['id']; ?>">ubah</a></td>
                     <td><a href="<?= BASEURL; ?>/daftarsiswa/hapus/<?= $s['id']; ?>" class="badge text-bg-danger text-white"
                             onclick="return confirm('apakah anda yakin ingin menghapus?')">Hapus</a></td>
                 </tr>
@@ -41,12 +44,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="judulModal">Tambah data siswa</h1>
+                <h1 class="modal-title fs-5" id="judulModalLabel">Tambah data siswa</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/daftarsiswa/tambah" method="post">
-                    <div class="mb-3">
+                    <input type="hidden" name="id" id="id">
+                    <div class=" mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="nama siswa">
                     </div>

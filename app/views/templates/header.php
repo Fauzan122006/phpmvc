@@ -7,6 +7,8 @@
     <title>Halaman <?= $data['judul'] ?></title>
     <link href="<?= BASEURL; ?>/css/bootstrap.css" rel="stylesheet">
     <link href="<?= BASEURL; ?>/css/custom.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="sweetalert2.min.css">
 </head>
 

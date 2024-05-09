@@ -61,4 +61,13 @@ class DaftarSiswa extends Controller
             exit;
         }
     }
+
+    public function cari()
+    {
+        $data['judul'] = "Daftar siswa";
+        $data['DaftarSiswa'] = $this->model('DaftarSiswa_model')->cariDataSiswa();
+        $this->view('templates/header', $data);
+        $this->view('daftarsiswa/index', $data);
+        $this->view('templates/footer');
+    }
 }

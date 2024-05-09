@@ -8,7 +8,7 @@ $(function() {
             $('#email').val('');
             $('#jurusan').val('');
             $('#id').val('');
-        $('.modal-body form').attr('action', 'http://localhost/PHP/Sandika%20Galih/phpmvc/public/daftarsiswa/tambah');
+        $('.modal-body form').attr('action', 'http://localhost/PHP/Sandika%20Galih/phpmvc/daftarsiswa/tambah');
         
 
     });
@@ -17,13 +17,13 @@ $(function() {
         
         $('#judulModalLabel').html('Ubah Data Siswa');
         $('.modal-footer button[type=submit]').html('ubah data');
-        $('.modal-body form').attr('action', 'http://localhost/PHP/Sandika%20Galih/phpmvc/public/daftarsiswa/ubah');
+        $('.modal-body form').attr('action', 'http://localhost/PHP/Sandika%20Galih/phpmvc/daftarsiswa/ubah');
 
 
         const id = $(this).data('id');
         
         $.ajax({
-            url: 'http://localhost/PHP/Sandika%20Galih/phpmvc/public/daftarsiswa/getubah',
+            url: 'http://localhost/PHP/Sandika%20Galih/phpmvc/daftarsiswa/getubah',
             data: {id: id},
             method: 'post',
             dataType: 'json',

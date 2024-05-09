@@ -2,9 +2,26 @@
     <h4>Daftar Siswa</h4>
 
     <?php Flasher::flash() ?>
-    <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
-        Tambah siswa
-    </button>
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal"
+                data-bs-target="#formModal">
+                Tambah siswa
+            </button>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL; ?>/daftarsiswa/cari" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="cari siswa" name="keyword" id="keyword"
+                        autocomplete="off">
+                    <button class="btn btn-outline-primary" type="submit" id="tombolCari">Cari</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <table class="table">
         <thead>
